@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack-cli --config webpack.config.js --colors",
+    "start:prod": "node src/server/index.js",
     "start:dev": "nodemon src/server/index.js --exact babel-node"
   },
   "keywords": [],
@@ -14,11 +13,13 @@
   "license": "ISC",
   "dependencies": {
     "@babel/register": "^7.6.2",
+    "asset-require-hook": "^1.2.0",
     "autoprefixer": "^9.6.5",
     "babel-eslint": "^10.0.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "classnames": "^2.2.6",
+    "compression-webpack-plugin": "3.0.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.5.1",
     "eslint-config-airbnb": "^17.1.1",
@@ -27,6 +28,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "express": "^4.17.1",
+    "helmet": "^3.21.2",
     "history": "^4.10.1",
     "ignore-styles": "^5.0.1",
     "md5": "^2.2.1",
@@ -40,7 +42,10 @@
     "react-router": "^5.1.2",
     "react-router-config": "^5.1.1",
     "react-router-dom": "^5.1.2",
-    "redux": "^4.0.4"
+    "redux": "^4.0.4",
+    "terser-webpack-plugin": "2.2.1",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-manifest-plugin": "2.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
